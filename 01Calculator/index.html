@@ -5,40 +5,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=functions" />
 </head>
 
 <body>
     <div class="min-h-screen bg-gray-700 flex items-center justify-center">
         <div class="bg-gray-800 border-2 border-gray-900 shadow-2xl rounded-lg">
-
-            <form class="border-b-2 border-gray-900">
-                <input type="number"
-                    class="p-8 text-3xl outline-none focus:bg-gray-700 text-3xl rounded-lg text-white text-right">
+            <!-- <span class="material-symbols-outlined p-2 bg-gray-500 hover:bg-gray-400 rounded-full m-2 ">
+                functions
+                </span> -->
+            <form   class="border-b-2 border-gray-900 ">
+                <input id="screen" type="text"
+                    class="p-8 text-3xl outline-none focus:bg-gray-700 text-3xl rounded-lg text-white text-right  [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]">
             </form>
-            <div class="font-mono p-6 text-gray-800 grid grid-cols-4 gap-4">
-                <button class="col-span-3 bg-blue-500 rounded-full p-5 hover:bg-blue-400">C</button>
-                <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5" bg-purple-400 hover:bg-purple-400>&divide;</button>
+            
+            <div id="buttonContainer" class="font-mono p-6 text-gray-800 grid grid-cols-4 gap-4">
+                
+                <button class="col-span-2 bg-blue-500 rounded-full p-5 hover:bg-blue-400"onclick="clearScreen()">C</button>
+                <button class="font-mono rounded-full p-5 bg-orange-400 hover:bg-orange-300"onclick="appendToScreen('%')">&percnt;</button>
+                <button class="font-mono rounded-full p-5 bg-orange-400 hover:bg-orange-300"onclick="appendToScreen('/')">&divide;</button>
 
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">1</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">2</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">3</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5" bg-purple-400 hover:bg-purple-400>&minus;</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5"onclick="appendToScreen('7')">7</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5"onclick="appendToScreen('8')">8</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5"onclick="appendToScreen('9')">9</button>
+                    <button class="font-mono rounded-full p-5 bg-orange-400 hover:bg-orange-300"onclick="appendToScreen('-')">&minus;</button>
 
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">4</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">5</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">6</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5" bg-purple-400 hover:bg-purple-400>&plus;</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5"onclick="appendToScreen('4')">4</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5"onclick="appendToScreen('5')">5</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5"onclick="appendToScreen('6')">6</button>
+                    <button class="font-mono  rounded-full p-5 bg-orange-400 hover:bg-orange-300"onclick="appendToScreen('+')">&plus;</button>
 
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">7</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">8</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5">9</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5" bg-purple-400 hover:bg-purple-400>&times;</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5"onclick="appendToScreen('1')">1</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5"onclick="appendToScreen('2')">2</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5" onclick="appendToScreen('3')">3</button>
+                    <button class="font-mono  rounded-full p-5 bg-orange-400 hover:bg-orange-300"onclick="appendToScreen('*')">&times;</button>
 
-                    <button class=" bg-blue-500 rounded-full p-5 hover:bg-blue-400">0</button>
-                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5 col-span-3  bg-purple-400 hover:bg-purple-400">&equals;</button>
+                    <button class=" bg-blue-500 rounded-full p-5 hover:bg-blue-400" onclick="appendToScreen('0')">0</button>
+                    <button class="font-mono bg-gray-500 hover:bg-gray-400 rounded-full p-5 col-span-3  bg-orange-400 hover:bg-orange-300" onclick="calculate()">&equals;</button>
+             
             </div>
+            
+        </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
