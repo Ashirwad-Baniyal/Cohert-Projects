@@ -76,7 +76,6 @@
                 document.getElementById('result').innerHTML = "Please enter valid weight and height.";
                 return;
             }
-
             const bmi = (weight / (height * height)).toFixed(2); // Calculate BMI
             document.getElementById('result').innerHTML = `Your BMI is: <strong>${bmi}</strong>`;
         });

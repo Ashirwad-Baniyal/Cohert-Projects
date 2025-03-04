@@ -1,7 +1,7 @@
         function clearScreen() {
             document.getElementById("screen").value = "";
         }
-        function appendToScreen(value) {
+        function addToScreen(value) {
             document.getElementById("screen").value += value;
         }
 
