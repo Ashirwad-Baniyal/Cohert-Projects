@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Color Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Advanced Color Picker</h2>
+        <input type="color" id="colorPicker">
+        <div class="color-box" id="selectedColor"></div>
+        <p class="info">Hex Code: <span id="hexCode">#ffffff</span></p>
+
+        <input type="color" id="compColor" disabled>
+        <p class="info">Complementary Color: <span id="complementaryColor">#000000</span></p>
+    </div>
+
+    <script>
+        const hex1 = document.getElementById('colorPicker');
+        const selected = document.getElementById('selectedColor');
+        const curr = document.getElementById("hexCode");
+        const compColor = document.getElementById('compColor');
+        const compCode = document.getElementById("complementaryColor");
+
+        compColor.disabled = true; // Corrected from 'disable'
+
+        document.addEventListener("input", () => {
+            let selectedColor = hex1.value;
+            curr.innerText = selectedColor;
+            selected.style.backgroundColor = selectedColor;
+
+            // Convert hex to integer
+            let rgb = parseInt(selectedColor.slice(1), 16);
+
+            // Compute complementary color
+            let comp = (0xffffff ^ rgb).toString(16).padStart(6, '0');
+            let compHex = `#${comp}`;
+
+            // Update complementary color display
+            compCode.innerText = compHex; 
+            compColor.value = compHex; // Set color in input box
+        });
+
+
+    </script>
+
+</body>
+</html>
